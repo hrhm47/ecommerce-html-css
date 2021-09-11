@@ -324,19 +324,31 @@ section {
 
 
 /* featured products */
-.feaprod .featured {
-    display: flex;
+.feaprod .feabox {
+    /* display: flex;
     flex-wrap: wrap;
     justify-content: center;
     align-items: center;
     background: #f9f9f9;
     gap:1.2rem;
-
+    flex: 1 1 30rem;
+    padding: 2rem; */
+    display: flex;
+    flex-wrap: wrap;
+    gap: 1.5rem;
+    border: .1rem solid rgba(0,0,0,0.1);
+    border-radius: .5rem;
+    background: #f9f9f9;
+    padding: 2rem;
+    align-items: center;
+    margin: 1.5rem 0;
 }
 
-.feaprod .featured .feabox {
+
+.feaprod .feabox {
     border: .1rem solid rgba(0,0,0,0.1);
     display: flex;
+    /* flex-wrap: wrap; */
     justify-content: space-between;
     border-radius: 0.5rem;
     text-align: center;
@@ -344,84 +356,90 @@ section {
     overflow: hidden;
     flex: 1 1 30rem;
 }
-
-.feaprod .featured .feabox .left-img{
+.feaprod .feabox .images{
+    /* display: flex;
+    flex-wrap: wrap;
+    width: 50%;
+    align-items: center;
+    justify-content: space-between;
+    flex:1 1 20rem; */
     display: flex;
+    gap: 1.5rem;
+    align-items: center;
+    flex: 1 1 50rem;
+}
+.feaprod .feabox .images .left-img{
+   width: 20%;
+}
+.feaprod .feabox .images .large-image{
+    width: 80%;
+   padding: 1rem;
+}
+.feaprod .feabox .images .left-img img{
+    width: 100%;
+    padding: 1rem;
+    border: .1rem solid rgba(0,0,0,0.1);
+    cursor: pointer
+}
+.feaprod .feabox .images .left-img img:hover{
+    background: #ccc;
+}
+
+.feaprod .feabox .images .large-image img{
+    width: 100%;
+}
+.feaprod .feabox .images .large-image img:hover{
+    transform: scale(1.05);
+}
+.feaprod .feabox .feadetail {
+    flex: 1 1 40rem;
+    /* display: flex;
     flex-direction: column;
-    align-items: flex-start;
-    gap: .5rem;
-    padding: 15px;
-}
-.feaprod .featured .feabox .left-img img{
-    width: 20%;
-    padding: 10px;
-    border: 1px solid #2c2c54;
-    transition: all .3s linear;
-
-}
-.feaprod .featured .feabox .left-img img:hover{
-    /* opacity: .5; */
-    background: grey;
-}
-.feaprod .featured .feabox .img1{
-    width: 45%;
-    height: 20%;
-    margin-top: 4rem;
-    margin-left: -45rem;
-    /* transition: all .3s linear; */
-}
-.feaprod .featured .feabox .img1:hover{
-    transform: scale(1.1);
-}
-.feaprod .featured .feabox .feadetail {
-    padding: 1.5rem;
-    display: flex;
-    flex-direction: column;
-    align-items: flex-start;
-    justify-content: center;
-    margin-left: 1rem;
-    
+    flex-wrap: wrap; */
 }
 
 
-.feaprod .featured .feabox .feadetail h3{
+.feaprod .feabox .feadetail h3{
     color: var(--black);
     font-size: 2rem;
 }
 
-.feaprod .featured .feabox .feadetail .price{
+.feaprod .feabox .feadetail .price{
     color: var(--black);
-    font-size: 2rem;
+    font-size: 2.5rem;
     font-weight: bolder;
     padding: 1rem 0rem;
 }
 
-.feaprod .featured .feabox .feadetail p{
-    font-size: 1rem;
+.feaprod  .feabox .feadetail p{
+    /* font-size: 1rem; */
     text-align: justify;
+    font-size: 1.3rem;
+    color: var(--black);
+    padding: 1rem 0;
 }
-.feaprod .featured .feabox .feadetail .price span{
+.feaprod  .feabox .feadetail .price span{
     color: var(--orange);
     font-size: 1.5rem;
     text-decoration: line-through;
 }
 
 
-.feaprod .featured .feabox .feadetail .stars{
+.feaprod .feabox .feadetail .stars{
     padding-bottom: 1rem;
 }
 
-.feaprod .featured .feabox .feadetail .stars i{
+.feaprod .feabox .feadetail .stars i{
     font-size: 1.7rem;
     color: var(--orange);
 }
-.feaprod .featured .feabox .feadetail .stars .active {
+.feaprod  .feabox .feadetail .stars .active {
     font-size: 1.7rem;
     color: white;
     background: var(--orange);
 }
 
-.feaprod .featured .feabox .feadetail .btnn {
+.feaprod .feabox .feadetail .btnn {
     border-radius: 0.5rem;
     border: .2rem solid var(--black);
     font-weight: bolder;
@@ -431,7 +449,7 @@ section {
     background: white;
     padding: .4rem 1rem ;
 }
-.feaprod .featured .feabox .feadetail .btnn:hover{
+.feaprod .feabox .feadetail .btnn:hover{
     background: var(--orange);
     color: white;
     border: none;
@@ -440,35 +458,42 @@ section {
 
 /* Customer Reviews */
 .customer .reviews{
-    display: flex;
-    /* flex-wrap: wrap; */
+    /* display: flex;
+    flex-wrap: wrap;
     justify-content: space-between;
     align-items: center;
     gap:1.2rem;
-    
+    flex: 1 2 10rem; */
+    display: flex;
+    flex-wrap: wrap;
+    gap: 1.5rem;
 }
 
 .customer .reviews .customer-review{
-    display: flex;
-    flex-direction: column;
-    align-items: center;
-    justify-content: center;
-    background: #f0ecec;
-    border: .1rem solid #e1e1e6;
-    padding:.9rem 2rem;
-    gap:10px;
+    flex: 1 1 30rem;
+    text-align: center;
+    border: .1rem solid rgba(0,0,0,0.1);
+    border-radius: .5rem;
+    background: #f9f9f9;
+    padding: 2rem;
+    
 }
 .customer .reviews .customer-review img{
-    border-radius: 100%;
-    width: 30%;
-    height: 30%;
+    border-radius: 50%;
+    object-fit: cover;
+    height: 15rem;
+    width: 15rem;
+    margin: 1rem 0;
 }
+
 .customer .reviews .customer-review h3{
-    font-weight: bolder;
-    font-size: 2rem;
+    font-size: 2.5rem;
+    color: var(--black);
 }
 .customer .reviews .customer-review p{
-    text-align: center;
+    font-size: 1.5rem;
+    color: var(--black);
+    padding: 1rem 0;
 }
 .customer .reviews .customer-review  .stars{
     padding-bottom: 1rem;
@@ -477,81 +502,84 @@ section {
 .customer .reviews .customer-review  .stars i{
     font-size: 1.3rem;
     color: var(--orange);
-}
-.customer .reviews .customer-review .stars .active {
-    font-size: 1.3rem;
-    color: white;
-    background: var(--orange);
+    padding: 0.5rem 0;
 }
 
 
 /* Monthly News letter */
-.newsletter .main-news{
-    display: flex;
-    flex-wrap: wrap;
-    justify-content: center;
-    align-items: center;
-    background: #f0ecec;
+.newsletter{
+    padding-top: .5rem;
+    padding-bottom: .5rem;
+}
+.newsletter .news-class{
+    text-align: center;
+    border: .1rem solid rgba(0,0,0,0.1);
+    border-radius: .5rem;
+    background: #f9f9f9;
     padding: 2rem;
 }
-.newsletter .main-news .news-class{
-    display: flex;
-    flex-direction: column;
-    justify-content: center;
-    align-items: center;
-    gap:1.2rem;
+.newsletter .news-class h3{
+    font-size: 2.5rem;
+    color: var(--black);
 }
-.newsletter .main-news .news-class h2{
-    font-size: 2rem;
-    font-weight: bolder;
-}
-.newsletter .main-news .news-class p{
-    text-align: center;
-    font-size: 1rem;
-    font-weight: 600;
+.newsletter  .news-class p{
+    font-size: 1.5rem;
     color: #666;
+    margin: 1rem auto;
+    max-width: 80rem;
 }
 
-.newsletter .main-news .news-class .form input[type="email"]{
-   border: 2px solid #2c2c54;
-   width: 25vw;
-   padding: .35rem;
-   background: white;
+.newsletter.news-class .form {
+    margin: 1rem auto;
+    max-width: 50rem;
+    display: flex;
 }
-.newsletter .main-news .news-class .form button{
-   border: 2px solid #2c2c54;
-   background: white;
-   padding: .35rem 2rem;
-   font-weight: bolder;
+.newsletter .news-class form .box {
+    width: 40%;
+    font-size: 1.7rem;
+    text-transform: none;
+    color: #333;
+    padding: 1rem;
+    border: .2rem solid rgba(0,0,0,0.1);
+    border-right: none;
+    margin-top: 1rem;
+}
+
+.newsletter .news-class form .btn {
+    border-radius: 0;
 }
 
 /* footer section  */
 
 .foter .main-footer{
-    display: flex;
+    /* display: flex;
     flex-wrap: wrap;
     justify-content: space-between;
     align-items: center;
     background: #f0ecec;
-    padding: 1rem;
+    padding: 1rem; */
+    border: .1rem solid rgba(0,0,0,0.1);
+    border-radius: .5rem;
+    background: #f9f9f9;
+    padding: 2rem;
+    display: flex;
+    flex-wrap: wrap;
+    gap: 1.5rem;
 }
 
 .foter .main-footer .footer-box{
-    display: flex;
-    flex-direction: column;
-    justify-content: center;
-    align-items: flex-start;
-    margin: 20px;
-    padding: .4rem;
+    flex: 1 1 20rem;
 }
 .foter .main-footer .footer-box h3{
+    color: var(--black);
     font-size: 2rem;
-    font-weight: bolder;
+    padding-bottom: 1.5rem;
 }
 .foter .main-footer .footer-box p{
-    padding: 5px;
     color: #666;
-    font-weight: 600;
+    font-size: 1rem;
+    padding-bottom: 1.5rem;
+    display: block;
 }
 
 
@@ -574,6 +602,19 @@ section {
         width: 100%;
         background: #eee;
         border-top: .1rem solid rgba(0,0,0,0.1);
+    }
+    header .navbar.active {
+        left: 0
+    }
+
+    header .navbar a {
+        font-size: 2rem;
+        background: #fff;
+        border: .1rem solid rgba(0,0,0,0.1);
+        border-radius: 1.5rem;
+        margin: 1.5rem;
+        display: block;
+        text-align: center;
     }
 }
 
